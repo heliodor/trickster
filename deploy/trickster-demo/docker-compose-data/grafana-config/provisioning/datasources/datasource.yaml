@@ -2,6 +2,34 @@
 apiVersion: 1
 
 datasources:
+# InfluxDB
+- name: infl-direct
+  type: influxdb
+  access: proxy
+  database: _internal
+  orgId: 1
+  uid: ds_infl_direct
+  url: http://influxdb:8086
+  version: 1
+  editable: true
+- name: infl-trickster-memory-stdout
+  type: influxdb
+  access: proxy
+  database: _internal
+  orgId: 1
+  uid: ds_infl1_trickster
+  url: http://trickster:8480/infl1
+  version: 1
+  editable: true
+- name: infl-trickster-filesystem-jc
+  type: influxdb
+  access: proxy
+  database: _internal
+  orgId: 1
+  uid: ds_infl2_trickster
+  url: http://trickster:8480/infl2
+  version: 1
+  editable: true
 # Prometheus
 - name: prom-direct
   type: prometheus
